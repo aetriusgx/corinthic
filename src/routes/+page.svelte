@@ -1,2 +1,5 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<div class="card-wrapper">
+    <div class="card-content">
+        Welcome to corinthic.space
+    </div>
+</div>

@@ -1,2 +1,49 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+    --animate-border-rotate: border-rotate 3s linear infinite;
+    @keyframes border-rotate {
+        to {
+            --border-angle: 360deg;
+        }
+    }
+
+    --color-vampire-red-900: rgb(18, 0, 0);
+    --color-vampire-red-800: rgb(22, 0, 0);
+    --color-vampire-red-700: rgb(26, 0, 0);
+    --color-vampire-red-600: rgb(30, 0, 0);
+}
+
+@layer utilities {
+    .card-wrapper {
+        @apply w-full max-w-sm rounded-lg p-px 
+        animate-border-rotate
+        bg-conic/[from_var(--border-angle)]
+        from-vampire-red-900 via-red-900 to-vampire-red-900
+        from-80% via-90% to-100%;
+    }
+
+    .card-content {
+        @apply p-7 rounded-lg bg-stone-950 text-center;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@font-face {
+    font-family: Agave;
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("fonts/Agave-Regular.ttf") format("truetype")
+}
+
+html {
+    height: 100dvh;
+    font-family: "Agave", sans-serif;
+}
